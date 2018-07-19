@@ -15,7 +15,7 @@ class FriendList extends Component {
   render() { 
     return (
       <div>
-        {this.props.frends.map(friend => {
+        {this.props.friends.map(friend => {
           return <Friend key={friend.email} friend={friend} />
         })}
       </div>

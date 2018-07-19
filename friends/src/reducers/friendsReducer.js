@@ -6,7 +6,7 @@ const initialState = {
 export const friendsReducer = (state = initialState, action) => {
   switch (action.type) {
     case GET_FRIENDS:
-      return {...state}
+      return {...state, friends: action.payload}
     case ERROR:
       return {...state, error: action.payload}
     default:
