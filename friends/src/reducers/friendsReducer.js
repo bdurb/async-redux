@@ -1,10 +1,11 @@
-import {stuff} from '../actions';
+import { GET_FRIENDS } from '../actions';
 
 const initialState = {
   friends: []
 }
-export const friendsReducer = (state, action) => {
+export const friendsReducer = (state = initialState, action) => {
   switch (action.type) {
-
+    case GET_FRIENDS:
+      return [...state]
   }
 };
