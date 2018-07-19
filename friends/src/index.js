@@ -7,10 +7,10 @@ import { applyMiddleware, createStore } from 'redux';
 import thunk from 'redux-thunk';
 import logger from 'redux-logger';
 
+const store = createStore(friendsReducer, applyMiddleware(thunk, logger));
 
 ReactDOM.render(
-  <Provider>
+  <Provider store={store}>
     <App />
   </Provider>
   , document.getElementById('root'));
-registerServiceWorker();
