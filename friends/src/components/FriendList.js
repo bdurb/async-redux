@@ -1,15 +1,27 @@
 import React, { Component } from 'react';
+import Friend from './Friend';
 
 class FriendList extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {  }
+
+
+  componentDidMount() {
+    this.props.getFriends();
   }
+
+  
   render() { 
     return (
-      <h1>Hello World</h1>
+      {this.props.frends.map(friend => {
+        return <Friend key={friend.email} friend={friend} />
+      })}
     );
   }
 }
+
+const mapStateToProps = state => {
+  return {
+    friends: state.friends
+  }
+}
  
-export default FriendList;
+export default connect(mapStateToProps, { getFriends })(FriendList);
