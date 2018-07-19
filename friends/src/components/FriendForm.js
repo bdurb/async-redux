@@ -6,9 +6,19 @@ class FriendForm extends Component {
     age: '',
     email: ''
    }
+
+   handleInputChange = e => {
+     this.setState({[e.target.name]: e.target.value})
+   }
   render() { 
     return (
-      <h1>this is a friend form yo!</h1>
+      <form>
+        <input placeholder="name" name="name" />
+        <input placeholder="age" age="age" />
+        <input placeholder="email" age="email" />
+        <button>Add Friend!</button>
+      </form>
+      
     );
   }
 }
